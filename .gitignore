@@ -1,0 +1,8 @@
+# Emacs backup files
+*~
+
+# RStudio artifacts
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata

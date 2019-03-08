@@ -1,0 +1,70 @@
+% -*- poly-noweb -*-
+
+\documentclass{article}
+
+\title{Molecular Classification of Cancer: Class Discovery and Class
+  Prediction by Gene Expression Monitoring}
+
+\author{Alexander Smith, Xueying Su}
+
+%% \usepackage{fontspec}
+%% \setmainfont[Ligatures=TeX]{Linux Libertine O}
+%% \setsansfont[Ligatures=TeX]{DejaVu Sans}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE,fig=TRUE}
+\maketitle
+
+
+\section{Background and objectives}
+
+\begin{quote}
+Background: We will attempt to recreate the class prediction, class
+discovery, and validation techniques described in the Golub 1999
+paper. However, we will be recreating this analysis using modern tools
+including R and Bioconductor. We will also seek to elaborate on the
+questions below.
+\end{quote}
+
+1. What are optimal (and suboptimal) sets of genes and biomarkers for
+the classification of AML and ALL?
+
+2. In addition to those used in the Golub 1999 paper, what are other
+effective algorithms for class prediction and class discovery?
+
+3. What are some of the advantages and disadvantages of different
+validation techniques used with class predicition and class discovery?
+
+
+\section{Computational Methods}
+
+\begin{quote}
+The computational methods that you intend to use to answer the
+question(s) in your proposal.
+\end{quote}
+
+TODO
+
+
+\section{Discussion}
+
+TODO
+
+\begin{quote}
+A brief description of how you plan to evaluate the biological
+significance of the results of your computer analysis. It's very
+important in science to motivate your audience to care about your work
+with its “Impact” or “Significance”.
+\end{quote}
+
+
+\section{References}
+
+\begin{quote}
+Several references describing the background of your proposed project.
+\end{quote}
+
+\href{http://www.marcottelab.org/users/BCH339N\_2016/AMLALLclassification.pdf}{Golub
+  1999 (PDF)}
+
+\end{document}
