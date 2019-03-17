@@ -21,9 +21,9 @@
 \maketitle
 
 
-\section{Background and objectives}
+\section{Background and Objectives}
 
-Background: We will attempt to recreate the class prediction, class
+We will attempt to recreate the class prediction, class
 discovery, and validation techniques described in the Golub 1999
 paper. However, we will be recreating this analysis using modern tools
 including R and Bioconductor. We will also seek to elaborate on the
@@ -31,12 +31,12 @@ questions below.
 
 \begin{enumerate}
 
-  \item What are optimal (and suboptimal) sets of genes and biomarkers
-    for the classification of AML and ALL?
+  \item What are the genes or biomarkers associated with AML and ALL
+    classification? What is the optimal set for the class prediction?
 
-  \item In addition to those used in the Golub 1999 paper, what are
-    other effective algorithms for class prediction and class
-    discovery?
+  \item What are the molecular subtypes of AML and ALL that can be
+    accurately predicted? Which subtypes can be accurately identified
+    through class discovery?
 
   \item What are some of the advantages and disadvantages of different
     validation techniques used with class predicition and class
@@ -44,26 +44,41 @@ questions below.
 
 \end{enumerate}
 
+
 \section{Computational Methods}
 
-\begin{quote}
-The computational methods that you intend to use to answer the
-question(s) in your proposal.
-\end{quote}
+\begin{itemize}
 
-TODO
+  \item We will use descriptive statistical methods in R to analyze
+    the Golub gene expression data.
+
+  \item We will use statistical learning and machine learning methods
+    in R to predict classification of leukemia subtypes.
+
+  \item We will use statistical learning and machine learning methods
+    in R to perform cluster classification of leukemia subtypes with
+    no prior biological knowledge based on gene expression data.
+
+  \item We will use validation techniques, such as cross-validation,
+    to verify our results and estimate their accuracy.
+
+\end{itemize}
 
 
 \section{Discussion}
 
-TODO
-
-\begin{quote}
-A brief description of how you plan to evaluate the biological
-significance of the results of your computer analysis. It's very
-important in science to motivate your audience to care about your work
-with its “Impact” or “Significance”.
-\end{quote}
+Through replication of the Golub data analysis, we hope to answer
+questions related to leukemia subtype classification through using
+newer tools and techniques, such as statistical analysis and machine
+learning. In doing so, we make no prior assumptions about our results,
+but we do hope to either validate the techniques used in the original
+study or apply other techniques of answering these questions which
+involve machine learning methods. We also hope to elaborate on related
+topics, such as techniques for validating the accuracy of our results
+or insight into identifying optimal feature sets for class prediction
+and discovery of leukemia subtypes. In short, this study aims to
+discover new techniques used in the classification of leukemia
+subtypes or validate existing techniques.
 
 
 \section{References}
