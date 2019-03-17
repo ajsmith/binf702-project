@@ -67,13 +67,13 @@ questions below.
 
 \section{Discussion}
 
-Through replication of the Golub data analysis, we hope to answer
+Through replication of the Golub data analysis, we aim to answer
 questions related to leukemia subtype classification through using
 newer tools and techniques, such as statistical analysis and machine
 learning. In doing so, we make no prior assumptions about our results,
-but we do hope to either validate the techniques used in the original
+but we do aim to either validate the techniques used in the original
 study or apply other techniques of answering these questions which
-involve machine learning methods. We also hope to elaborate on related
+involve machine learning methods. We also aim to elaborate on related
 topics, such as techniques for validating the accuracy of our results
 or insight into identifying optimal feature sets for class prediction
 and discovery of leukemia subtypes. In short, this study aims to
