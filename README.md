@@ -15,14 +15,14 @@ LaTeX source files are in 'src/'.
 
 The following requirements must be met in order to render documents:
 
-    * Linux operating system environment.
+* Linux operating system environment.
 
-    * The R programming language is installed, along with any libraries
-      needed to run code blocks.
+* The R programming language is installed, along with any libraries
+  needed to run code blocks.
 
-    * The LaTeX document system is installed.
+* The LaTeX document system is installed.
 
-    * The XeLaTeX PDF rendering tools are installed.
+* The XeLaTeX PDF rendering tools are installed.
 
 To render the documents, run:
 
