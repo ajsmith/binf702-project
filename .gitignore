@@ -6,3 +6,12 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Knitr files
+*-knitr.*
+
+# PDFs
+*.pdf
+
+# PostScript
+*.ps
