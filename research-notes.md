@@ -14,6 +14,8 @@ So accurate identification of single tissue subtypes is important for
 the treatment of subtype-specific molecules. We can study this in our
 project.
 
+    > Alex: Addressed by Question 2 in the proposal.
+
 “We began with class prediction: How could one use an initial
 collection of samples belonging to known classes (such as AML and ALL)
 to create a “class predictor” to classify new, unknown samples?”
@@ -21,6 +23,8 @@ to create a “class predictor” to classify new, unknown samples?”
 could one use an initial collection of samples belonging to known
 classes (for example CML and CLL) to create a “class predictor” to
 classify new, unknown samples?.
+
+    > Alex: Addressed by Question 2 in the proposal.
 
 In addition, in his article they solved three problems: “The first
 issue was to explore whether there were genes whose expression pattern
@@ -30,6 +34,8 @@ samples to create a “class predictor” capable of assigning a new
 sample to one of two classes. The third issue was how to test the
 validity of class predictors.”(golub, 1999)
 
+    > Alex: Addressed by Question 1, 2, 3 in the proposal.
+
 Due to their problems, we can model our questions, such as: "The first
 question is whether there is a pattern of gene expression associated
 with the different types of chronic leukemia to be predicted. The
@@ -38,9 +44,13 @@ given sample that randomly assigns new samples to one of the
 classes. The third question is how to test the validity of the class
 predictor with data. What is the probability?“
 
+    > Alex: Addressed by Question 1, 2, 3 in the proposal.
+
 “The methodology of class prediction can be applied to any measurable
 distinction among tumors.” (golub, 1999) So, we could also follow
 these class prediction and class discovery in our project.
+
+    > Alex: Addressed by Question 1, 2, 3 in the proposal.
 
 “Class discovery methods could also be used to search for fundamental
 mechanisms that cut across distinct types of cancers. For example, one
@@ -50,3 +60,5 @@ correlate strongly with tissue type, and then cluster the samples
 based on the remaining genes.” (golub, 1999) Or we could study the
 activating mutation of different types of cancer (such as CML and
 AML). <http://www.bloodjournal.org/content/106/10/3377/tab-figures-only>
+
+    > Alex: Addressed by Question 1, 2, 3 in the proposal.
