@@ -20,8 +20,52 @@
 \SweaveOpts{concordance=TRUE,fig=TRUE}
 \maketitle
 
+\begin{abstract}
+	
+Although cancer classification has improved over the past few decades, new cancer 
+categories have emerged in particular (category discovery) or tumors have been 
+assigned to known categories (category prediction). Golub 1999 article describes 
+a general approach to cancer classification based on DNA microarray gene expression 
+monitoring and its application to human acute leukemia as a test case. We hope to 
+reanalyze the Golub data using new programming languages (such as R, etc.) and 
+techniques (such as statistical learning and machine learning) and answer questions 
+about the leukemia subtype. In addition, we intend to validate the techniques used 
+in Golub 1999 with new programming tools and techniques. Meanwhile, we will verify 
+the accuracy of data results. In conclusion, this study used new tools and techniques 
+to find the classification of leukemia subtypes.
+
+\end{abstract}
 
 \section{Background and Objectives}
+
+As a result of carcinogenic substance increase, the risk of people causing 
+cancer is becoming greater and greater. In cancer cells, changes in key genes 
+lead to abnormal cell activity, usually as a result of mutations in the DNA in 
+the cell. Because there are so many different things that can cause mutations, 
+there are so many causes of cancer. We chose acute leukemia as a test case. 
+Acute leukemia is caused by stem cells or cell damage early in the development 
+of the bone marrow. Mutations that affect cell division, differentiation, and 
+cell death control lead to the accumulation of early blood cell precursors in 
+embryonic cells.[2] according to the types of leukocytes affected (lymphoid and 
+myeloid), leukemias fall into two major groups: acute lymphoblastic leukemia (ALL) 
+and acute myeloid leukemia (AML). ALL is the most common form of leukemia diagnosed 
+in children.[3] AML accounts for 10-15% of childhood leukemia diagnoses and is the 
+most common type of acute leukemia diagnosed in adults.[4] the risk of developing most 
+types of leukemia increases with age. However, the most common age group for acute 
+lymphoblastic leukemia (ALL) is between both the ages of 3-7 and after the age of 40. 
+Adolescents and young adults with acute lymphoblastic leukemia (ALL) and acute myeloid 
+leukemia (AML) have lower survival rates than children.[5] Males also had higher 
+rates of leukemia than females.[6]
+
+First of all, there are many types of cancer, and different types of cancer have 
+different treatment plans, which is also a huge challenge in the field of medicine. 
+Therefore, accurate classification of cancer is helpful for further research on cancer 
+treatment. Then, due to the limitations of the morphological appearance of the tumor, 
+the tumor with similar pathological appearance could not be well differentiated, so the 
+cancer treatment plan could not be formulated for specific tumors. Secondly, because 
+there is no set of systematic cancer classification methods, it is unable to accurately 
+and quickly determine the tumor subtype. Therefore, in Golub 1999, he divided cancer 
+into two challenges: discovery and prediction.[1]
 
 We will attempt to recreate the class prediction, class
 discovery, and validation techniques described in the Golub 1999
@@ -89,9 +133,28 @@ Several references describing the background of your proposed project.
 
 \begin{enumerate}
 
-  \item Golub 1999 (PDF)
-    \url{http://www.marcottelab.org/users/BCH339N_2016/AMLALLclassification.pdf}
+  \item Todd R Golub, Donna K Slonim, Pablo Tamayo, Christine Huard, Michelle Gaasenbeek, 
+        Jill P Mesirov, Hilary Coller, Mignon L Loh, James R Downing, Mark A Caligiuri, 
+        et al. Molecular classiﬁcation of cancer: class discovery and class prediction by 
+        gene expression monitoring. science, 286(5439):531–537, 1999.
+  
+  \item V Hoﬀbrand, P Moss, and Pettit. Essential haematology (essential), 2006.
 
+  \item Martin Stanulla, Gunnar Cario, Barbara Meissner, Andr Schrauder, Anja Mricke, Hansjrg Riehm, 
+        and Martin Schrappe. Integrating molecular information into treatment of childhood acute 
+        lymphoblastic leukemia—a perspective from the bfm study group. Blood Cells, 
+        Molecules, and Diseases, 39(2):160–163, 2007.
+
+  \item Daniel G Tenen. Disruption of diﬀerentiation in human cancer: Aml shows the way. Nature reviews cancer, 3(2):89, 2003.
+  
+  \item Julie Wolfson, Can-Lan Sun, Laura Wyatt, Wendy Stock, and Smita Bhatia. Adolescents
+        and young adults with acute lymphoblastic leukemia and acute myeloid leukemia: impact 
+        of care at specialized cancer centers on survival outcome. Cancer Epidemiology and 
+        Prevention Biomarkers, 26(3):312–320, 2017.
+
+  \item Jennifer F Yamamoto and Marc T Goodman. Patterns of leukemia incidence in the united states 
+        by subtype and demographic characteristics, 1997–2002. Cancer Causes & Control, 19(4):379– 390, 2008.
+  
 \end{enumerate}
 
 \end{document}
