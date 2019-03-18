@@ -59,15 +59,30 @@ Adolescents and young adults with acute lymphoblastic leukemia (ALL) and acute m
 leukemia (AML) have lower survival rates than children.[5] Males also had higher 
 rates of leukemia than females.[6]
 
-First of all, there are many types of cancer, and different types of cancer have 
-different treatment plans, which is also a huge challenge in the field of medicine. 
-Therefore, accurate classification of cancer is helpful for further research on cancer 
-treatment. Then, due to the limitations of the morphological appearance of the tumor, 
-the tumor with similar pathological appearance could not be well differentiated, so the 
-cancer treatment plan could not be formulated for specific tumors. Secondly, because 
-there is no set of systematic cancer classification methods, it is unable to accurately 
-and quickly determine the tumor subtype. Therefore, in Golub 1999, he divided cancer 
-into two challenges: discovery and prediction.[1]
+As the number of protein products and gene expression changes, such as 
+gene mutation, deletion, chromosomal translocation or inversion, etc., 
+cells become more and more fragile, and cancer cells are generated, 
+which in turn leads to leukemia.[7] chromosomal translocations have been 
+identified to cause leukemia in patients, but specific rearrangements have 
+not been identified.[8] therefore, it is difficult to accurately determine 
+the subtype of leukemia. Experimental studies on TEL locus rearrangement by 
+polymerase chain reaction (PCR) showed that it was observed in acute lymphoblastic 
+leukemia (ALL) [9], indicating that molecular diagnostic methods were very important 
+in identifying different subgroups of leukemia [10]. However, this is far from enough. 
+If you cannot pinpoint the subtype of leukemia you cannot make a treatment plan 
+for that particular subtype.
+
+First of all, there are many subtypes of cancer and the causes of cancer vary. 
+Different chromosomal translocations lead to different types of cancer and further 
+lead to different treatment plans, which is also a great challenge in the field of 
+clinical medicine at present. Therefore, accurate classification of cancer is helpful 
+for further research on cancer treatment. Then, due to the limited morphological 
+appearance of the tumor, the tumor with highly similar pathological appearance could 
+not be well differentiated, so the cancer treatment plan could not be formulated for 
+specific tumor types. In addition, because there is no set of systematic cancer 
+classification methods, it is unable to accurately and quickly determine the tumor 
+subtype. Therefore, in Golub 1999, he divided cancer into two challenges: 
+discovery and prediction.[1]
 
 We will attempt to recreate the class prediction, class
 discovery, and validation techniques described in the Golub 1999
@@ -156,7 +171,22 @@ Several references describing the background of your proposed project.
 
   \item Jennifer F Yamamoto and Marc T Goodman. Patterns of leukemia incidence in the united states 
         by subtype and demographic characteristics, 1997–2002. Cancer Causes \& Control, 19(4):379– 390, 2008.
-  
+        
+  \item McLean, T. W., Ringold, S., Neuberg, D., Stegmaier, K., Tantravahi, R., Ritz, J., ... & Bartram, C. R. (1996). 
+        TEL/AML-1 dimerizes and is associated with a favorable outcome in childhood acute lymphoblastic leukemia. 
+        Blood, 88(11), 4252-4258.
+        
+  \item Golub, T. R., Barker, G. F., Bohlander, S. K., Hiebert, S. W., Ward, D. C., Bray-Ward, P., ... & Gilliland, 
+        D. G. (1995). Fusion of the TEL gene on 12p13 to the AML1 gene on 21q22 in acute lymphoblastic leukemia. 
+        Proceedings of the National Academy of Sciences, 92(11), 4917-4921.
+        
+  \item Romana, S. P., Poirel, H., Leconiat, M., Flexor, M. A., Mauchauffe, M., Jonveaux, P., ... & Bernard, O. A. (1995). 
+        High frequency of t (12; 21) in childhood B-lineage acute lymphoblastic leukemia. Blood, 86(11), 4263-4269.
+        
+  \item Shurtleff, S. A., Buijs, A., Behm, F. G., Rubnitz, J. E., Raimondi, S. C., Hancock, M. L., ... & Downing, J. R. (1995). 
+        TEL/AML1 fusion resulting from a cryptic t (12; 21) is the most common genetic lesion in pediatric ALL and defines 
+        a subgroup of patients with an excellent prognosis. Leukemia, 9(12), 1985-1989.
+
 \end{enumerate}
 
 \end{document}
