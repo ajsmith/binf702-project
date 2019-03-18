@@ -172,18 +172,18 @@ Several references describing the background of your proposed project.
   \item Jennifer F Yamamoto and Marc T Goodman. Patterns of leukemia incidence in the united states 
         by subtype and demographic characteristics, 1997–2002. Cancer Causes \& Control, 19(4):379– 390, 2008.
         
-  \item McLean, T. W., Ringold, S., Neuberg, D., Stegmaier, K., Tantravahi, R., Ritz, J., ... & Bartram, C. R. (1996). 
+  \item McLean, T. W., Ringold, S., Neuberg, D., Stegmaier, K., Tantravahi, R., Ritz, J., ... \& Bartram, C. R. (1996).
         TEL/AML-1 dimerizes and is associated with a favorable outcome in childhood acute lymphoblastic leukemia. 
         Blood, 88(11), 4252-4258.
         
-  \item Golub, T. R., Barker, G. F., Bohlander, S. K., Hiebert, S. W., Ward, D. C., Bray-Ward, P., ... & Gilliland, 
+  \item Golub, T. R., Barker, G. F., Bohlander, S. K., Hiebert, S. W., Ward, D. C., Bray-Ward, P., ... \& Gilliland,
         D. G. (1995). Fusion of the TEL gene on 12p13 to the AML1 gene on 21q22 in acute lymphoblastic leukemia. 
         Proceedings of the National Academy of Sciences, 92(11), 4917-4921.
         
-  \item Romana, S. P., Poirel, H., Leconiat, M., Flexor, M. A., Mauchauffe, M., Jonveaux, P., ... & Bernard, O. A. (1995). 
+  \item Romana, S. P., Poirel, H., Leconiat, M., Flexor, M. A., Mauchauffe, M., Jonveaux, P., ... \& Bernard, O. A. (1995).
         High frequency of t (12; 21) in childhood B-lineage acute lymphoblastic leukemia. Blood, 86(11), 4263-4269.
         
-  \item Shurtleff, S. A., Buijs, A., Behm, F. G., Rubnitz, J. E., Raimondi, S. C., Hancock, M. L., ... & Downing, J. R. (1995). 
+  \item Shurtleff, S. A., Buijs, A., Behm, F. G., Rubnitz, J. E., Raimondi, S. C., Hancock, M. L., ... \& Downing, J. R. (1995).
         TEL/AML1 fusion resulting from a cryptic t (12; 21) is the most common genetic lesion in pediatric ALL and defines 
         a subgroup of patients with an excellent prognosis. Leukemia, 9(12), 1985-1989.
 
