@@ -5,38 +5,40 @@
 \title{Molecular Classification of Cancer: Class Discovery and Class
   Prediction by Gene Expression Monitoring}
 
-\author{Alexander Smith \and Xueying Su}
-
 %% \usepackage{fontspec}
 %% \setmainfont[Ligatures=TeX]{Linux Libertine O}
 %% \setsansfont[Ligatures=TeX]{DejaVu Sans}
 
 %\usepackage{setspace}
+\usepackage{authblk}
 \usepackage{hyperref}
 
 %\doublespacing
+
+\author{Alexander Smith}
+\author{Xueying Su}
+\affil{School of Systems Biology, George Mason University}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE,fig=TRUE}
 \maketitle
 
-\begin{abstract}
-	
-Although cancer classification has improved over the past few decades, new cancer 
-categories have emerged in particular (category discovery) or tumors have been 
-assigned to known categories (category prediction). Golub 1999 article describes 
-a general approach to cancer classification based on DNA microarray gene expression 
-monitoring and its application to human acute leukemia as a test case. We hope to 
-reanalyze the Golub data using new programming languages (such as R, etc.) and 
-techniques (such as statistical learning and machine learning) and answer questions 
-about the leukemia subtype. In addition, we intend to validate the techniques used 
-in Golub 1999 with new programming tools and techniques. Meanwhile, we will verify 
-the accuracy of data results. In conclusion, this study used new tools and techniques 
-to find the classification of leukemia subtypes.
-
-\end{abstract}
-
 \section{Background and Objectives}
+
+The accuracy of cancer classification is of the utmost importance to
+the effective treatment of any form of cancer, both for maximizing the
+efficacy and minimizing the toxicity of treatment. The Golub 1999
+study explored methods of improving the accuracy of acute
+lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene
+chip technology[1], and the Golub study proved to be groundbreaking in
+what it achieved. Our goal is is to replicate the methods and
+techniques used in the Golub study using modern tools and machine
+learning methods which are available through the R programming
+language. Our aim is to both validate the techniques used in the
+original Golub 1999 study as well as potentially discover new
+techniques through the application of modern methods.
 
 As a result of carcinogenic substance increase, the risk of people causing 
 cancer is becoming greater and greater. In cancer cells, changes in key genes 
@@ -49,7 +51,7 @@ cell death control lead to the accumulation of early blood cell precursors in
 embryonic cells.[2] according to the types of leukocytes affected (lymphoid and 
 myeloid), leukemias fall into two major groups: acute lymphoblastic leukemia (ALL) 
 and acute myeloid leukemia (AML). ALL is the most common form of leukemia diagnosed 
-in children.[3] AML accounts for 10-15% of childhood leukemia diagnoses and is the 
+in children.[3] AML accounts for 10-15\% of childhood leukemia diagnoses and is the
 most common type of acute leukemia diagnosed in adults.[4] the risk of developing most 
 types of leukemia increases with age. However, the most common age group for acute 
 lymphoblastic leukemia (ALL) is between both the ages of 3-7 and after the age of 40. 
@@ -153,7 +155,7 @@ Several references describing the background of your proposed project.
         Prevention Biomarkers, 26(3):312–320, 2017.
 
   \item Jennifer F Yamamoto and Marc T Goodman. Patterns of leukemia incidence in the united states 
-        by subtype and demographic characteristics, 1997–2002. Cancer Causes & Control, 19(4):379– 390, 2008.
+        by subtype and demographic characteristics, 1997–2002. Cancer Causes \& Control, 19(4):379– 390, 2008.
   
 \end{enumerate}
 
