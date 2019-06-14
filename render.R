@@ -1,6 +1,5 @@
 library(knitr)
-docs <- c("Proposal")
-for (doc in docs) {
+for (doc in commandArgs(trailingOnly=TRUE)) {
     srcFile <- paste(doc, ".Rnw", sep='')
     knitrFile <- paste(doc, "-knitr.Rnw", sep='')
     texFile <- paste(doc, "-knitr.tex", sep='')
