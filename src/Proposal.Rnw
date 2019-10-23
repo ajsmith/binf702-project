@@ -144,10 +144,6 @@ subtypes or validate existing techniques.
 
 \section{References}
 
-\begin{quote}
-Several references describing the background of your proposed project.
-\end{quote}
-
 \begin{enumerate}
 
   \item Todd R Golub, Donna K Slonim, Pablo Tamayo, Christine Huard, Michelle Gaasenbeek, 
