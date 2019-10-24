@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 work_dir=$(dirname $0)
 cd ${work_dir}
 
