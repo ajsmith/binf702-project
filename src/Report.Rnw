@@ -22,8 +22,10 @@
 \affil{School of Systems Biology, George Mason University}
 
 \begin{document}
+
 \SweaveOpts{concordance=TRUE,fig=TRUE}
 \maketitle
+
 
 \section{Inline R Test}
 
@@ -36,81 +38,37 @@ f <- function (a, b) {
 f(x1, x2)
 @
 
-\section{Background and Objectives}
 
-Recreate Golub \cite[see][1]{golub}.
+\section{Abstract}
 
 The accuracy of cancer classification is of the utmost importance to
-the effective treatment of any form of cancer, both for maximizing the
-efficacy and minimizing the toxicity of treatment. The Golub 1999
-study explored methods of improving the accuracy of acute
-lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
-classification and diagnosis using through statistical methods applied
-to microarray gene expression data acquired through Affymetrix gene
-chip technology[1], and the Golub study proved to be groundbreaking in
-what it achieved. Our goal is is to replicate the methods and
-techniques used in the Golub study using modern tools and machine
-learning methods which are available through the R programming
-language. Our aim is to both validate the techniques used in the
-original Golub 1999 study as well as potentially discover new
-techniques through the application of modern methods.
+the diagnosis and effective treatment of any form of cancer, both for
+maximizing the efficacy and for minimizing the toxicity of
+treatment. The Golub 1999 study explored methods of improving the
+accuracy of acute lymphoblastic leukemia (ALL) and acute myeloid
+leukemia (AML) classification and diagnosis using through statistical
+methods applied to microarray gene expression data acquired through
+Affymetrix gene chip technology \cite{golub}. The Golub study was
+groundbreaking in what it achieved, and its methods were a novel
+application of statistical learning techniques which are still applied
+today. The goal of this study is to replicate the methods and
+techniques used in the Golub study using tools and technology in the R
+programming language and Bioconductor ecosystem. In doing so, we will
+validate the techniques used in the original Golub 1999 study as well
+as potentially discover new techniques through the application of
+modern methods.
 
-As a result of carcinogenic substance increase, the risk of people
-causing cancer is becoming greater and greater. In cancer cells,
-changes in key genes lead to abnormal cell activity, usually as a
-result of mutations in the DNA in the cell. Because there are so many
-different things that can cause mutations, there are so many causes of
-cancer. We chose acute leukemia as a test case.  Acute leukemia is
-caused by stem cells or cell damage early in the development of the
-bone marrow. Mutations that affect cell division, differentiation, and
-cell death control lead to the accumulation of early blood cell
-precursors in embryonic cells.[2] according to the types of leukocytes
-affected (lymphoid and myeloid), leukemias fall into two major groups:
-acute lymphoblastic leukemia (ALL) and acute myeloid leukemia
-(AML). ALL is the most common form of leukemia diagnosed in
-children.[3] AML accounts for 10-15\% of childhood leukemia diagnoses
-and is the most common type of acute leukemia diagnosed in adults.[4]
-the risk of developing most types of leukemia increases with
-age. However, the most common age group for acute lymphoblastic
-leukemia (ALL) is between both the ages of 3-7 and after the age of
-40.  Adolescents and young adults with acute lymphoblastic leukemia
-(ALL) and acute myeloid leukemia (AML) have lower survival rates than
-children.[5] Males also had higher rates of leukemia than females.[6]
 
-As the number of protein products and gene expression changes, such as
-gene mutation, deletion, chromosomal translocation or inversion, etc.,
-cells become more and more fragile, and cancer cells are generated,
-which in turn leads to leukemia.[7] Chromosomal translocations have
-been identified to cause leukemia in patients, but specific
-rearrangement genes have not been identified.[8] therefore, it is
-difficult to accurately determine the subtype of
-leukemia. Experimental studies on TEL locus rearrangement by
-polymerase chain reaction (PCR) showed that it was observed in acute
-lymphoblastic leukemia (ALL) [9], indicating that molecular diagnostic
-methods were very important in identifying different subgroups of
-leukemia [10]. However, this is far from enough.  If you cannot
-pinpoint the subtype of leukemia you cannot make a treatment plan for
-that particular subtype.
+\section{Background and Objectives}
 
-First of all, there are many subtypes of cancer and the causes of
-cancer vary.  Different chromosomal translocations lead to different
-types of cancer and further lead to different treatment plans, which
-is also a great challenge in the field of clinical medicine at
-present. Therefore, accurate classification of cancer is helpful for
-further research on cancer treatment. Then, due to the limited
-morphological appearance of the tumor, the tumor with highly similar
-pathological appearance could not be well differentiated, so the
-cancer treatment plan could not be formulated for specific tumor
-types. In addition, because there is no set of systematic cancer
-classification methods, it is unable to accurately and quickly
-determine the tumor subtype. Therefore, in Golub 1999, he divided
-cancer into two challenges: discovery and prediction.[1]
+The Golub 1999 study sought to discover statistical learning methods
+which could accurately distinguish and classify molecular subtypes of
+leukemia, specifically acute lymphoblastic leukemia (ALL) and acute
+myeloid leukemia (AML). The study divided cancer classification into
+two main challenges: class discovery and class prediction. Those
+challenges map to unsupervised and supervised learning techniques,
+respectively.
 
-We will attempt to recreate the class prediction, class
-discovery, and validation techniques described in the Golub 1999
-paper. However, we will be recreating this analysis using modern tools
-including R and Bioconductor. We will also seek to elaborate on the
-questions below.
 
 \begin{enumerate}
 
@@ -154,7 +112,11 @@ questions below.
 
 \section{Clustering Methods}
 
+\section{Results and Discussion}
+
 \section{Conclusion}
+
+\section{Further Study}
 
 \section{Discussion}
 
