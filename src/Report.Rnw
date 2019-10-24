@@ -1,0 +1,226 @@
+% -*- poly-noweb -*-
+
+\documentclass{article}
+
+\title{Molecular Classification of Cancer: Class Discovery and Class
+  Prediction by Gene Expression Monitoring}
+
+%% \usepackage{fontspec}
+%% \setmainfont[Ligatures=TeX]{Linux Libertine O}
+%% \setsansfont[Ligatures=TeX]{DejaVu Sans}
+
+%\usepackage{setspace}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage[backend=biber]{biblatex}
+\bibliography{references}
+%% \addbibresource{references.bib}
+\usepackage{setspace}
+\doublespacing
+
+\author{Alexander Smith}
+\affil{School of Systems Biology, George Mason University}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE,fig=TRUE}
+\maketitle
+
+\section{Inline R Test}
+
+<<first example>>= (R)
+x1 <- 1:10
+x2 <- x1
+f <- function (a, b) {
+    return (a * b / 2)
+}
+f(x1, x2)
+@
+
+\section{Background and Objectives}
+
+Recreate Golub \cite[see][1]{golub}.
+
+The accuracy of cancer classification is of the utmost importance to
+the effective treatment of any form of cancer, both for maximizing the
+efficacy and minimizing the toxicity of treatment. The Golub 1999
+study explored methods of improving the accuracy of acute
+lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene
+chip technology[1], and the Golub study proved to be groundbreaking in
+what it achieved. Our goal is is to replicate the methods and
+techniques used in the Golub study using modern tools and machine
+learning methods which are available through the R programming
+language. Our aim is to both validate the techniques used in the
+original Golub 1999 study as well as potentially discover new
+techniques through the application of modern methods.
+
+As a result of carcinogenic substance increase, the risk of people
+causing cancer is becoming greater and greater. In cancer cells,
+changes in key genes lead to abnormal cell activity, usually as a
+result of mutations in the DNA in the cell. Because there are so many
+different things that can cause mutations, there are so many causes of
+cancer. We chose acute leukemia as a test case.  Acute leukemia is
+caused by stem cells or cell damage early in the development of the
+bone marrow. Mutations that affect cell division, differentiation, and
+cell death control lead to the accumulation of early blood cell
+precursors in embryonic cells.[2] according to the types of leukocytes
+affected (lymphoid and myeloid), leukemias fall into two major groups:
+acute lymphoblastic leukemia (ALL) and acute myeloid leukemia
+(AML). ALL is the most common form of leukemia diagnosed in
+children.[3] AML accounts for 10-15\% of childhood leukemia diagnoses
+and is the most common type of acute leukemia diagnosed in adults.[4]
+the risk of developing most types of leukemia increases with
+age. However, the most common age group for acute lymphoblastic
+leukemia (ALL) is between both the ages of 3-7 and after the age of
+40.  Adolescents and young adults with acute lymphoblastic leukemia
+(ALL) and acute myeloid leukemia (AML) have lower survival rates than
+children.[5] Males also had higher rates of leukemia than females.[6]
+
+As the number of protein products and gene expression changes, such as
+gene mutation, deletion, chromosomal translocation or inversion, etc.,
+cells become more and more fragile, and cancer cells are generated,
+which in turn leads to leukemia.[7] Chromosomal translocations have
+been identified to cause leukemia in patients, but specific
+rearrangement genes have not been identified.[8] therefore, it is
+difficult to accurately determine the subtype of
+leukemia. Experimental studies on TEL locus rearrangement by
+polymerase chain reaction (PCR) showed that it was observed in acute
+lymphoblastic leukemia (ALL) [9], indicating that molecular diagnostic
+methods were very important in identifying different subgroups of
+leukemia [10]. However, this is far from enough.  If you cannot
+pinpoint the subtype of leukemia you cannot make a treatment plan for
+that particular subtype.
+
+First of all, there are many subtypes of cancer and the causes of
+cancer vary.  Different chromosomal translocations lead to different
+types of cancer and further lead to different treatment plans, which
+is also a great challenge in the field of clinical medicine at
+present. Therefore, accurate classification of cancer is helpful for
+further research on cancer treatment. Then, due to the limited
+morphological appearance of the tumor, the tumor with highly similar
+pathological appearance could not be well differentiated, so the
+cancer treatment plan could not be formulated for specific tumor
+types. In addition, because there is no set of systematic cancer
+classification methods, it is unable to accurately and quickly
+determine the tumor subtype. Therefore, in Golub 1999, he divided
+cancer into two challenges: discovery and prediction.[1]
+
+We will attempt to recreate the class prediction, class
+discovery, and validation techniques described in the Golub 1999
+paper. However, we will be recreating this analysis using modern tools
+including R and Bioconductor. We will also seek to elaborate on the
+questions below.
+
+\begin{enumerate}
+
+  \item What are the genes or biomarkers associated with AML and ALL
+    classification? What is the optimal set for the class prediction?
+
+  \item What are the molecular subtypes of AML and ALL that can be
+    accurately predicted? Which subtypes can be accurately identified
+    through class discovery?
+
+  \item What are some of the advantages and disadvantages of different
+    validation techniques used with class predicition and class
+    discovery?
+
+\end{enumerate}
+
+
+\section{Computational Methods}
+
+\begin{itemize}
+
+  \item We will use descriptive statistical methods in R to analyze
+    the Golub gene expression data.
+
+  \item We will use statistical learning and machine learning methods
+    in R to predict classification of leukemia subtypes.
+
+  \item We will use statistical learning and machine learning methods
+    in R to perform cluster classification of leukemia subtypes with
+    no prior biological knowledge based on gene expression data.
+
+  \item We will use validation techniques, such as cross-validation,
+    to verify our results and estimate their accuracy.
+
+\end{itemize}
+
+
+\section{Biomarkers and Feature Selection}
+
+\section{Classification Methods}
+
+\section{Clustering Methods}
+
+\section{Conclusion}
+
+\section{Discussion}
+
+Through replication of the Golub data analysis, we aim to answer
+questions related to leukemia subtype classification through using
+newer tools and techniques, such as statistical analysis and machine
+learning. In doing so, we make no prior assumptions about our results,
+but we do aim to either validate the techniques used in the original
+study or apply other techniques of answering these questions which
+involve machine learning methods. We also aim to elaborate on related
+topics, such as techniques for validating the accuracy of our results
+or insight into identifying optimal feature sets for class prediction
+and discovery of leukemia subtypes. In short, this study aims to
+discover new techniques used in the classification of leukemia
+subtypes or validate existing techniques.
+
+
+\section{Special Mention}
+
+The proposal and vision for this project was originally made in
+collaboration Xueying Su
+
+
+\section{References}
+
+\printbibliography
+
+\begin{enumerate}
+
+  \item Todd R Golub, Donna K Slonim, Pablo Tamayo, Christine Huard, Michelle Gaasenbeek,
+        Jill P Mesirov, Hilary Coller, Mignon L Loh, James R Downing, Mark A Caligiuri,
+        et al. Molecular classiﬁcation of cancer: class discovery and class prediction by
+        gene expression monitoring. science, 286(5439):531–537, 1999.
+
+  \item V Hoﬀbrand, P Moss, and Pettit. Essential haematology (essential), 2006.
+
+  \item Martin Stanulla, Gunnar Cario, Barbara Meissner, Andr Schrauder, Anja Mricke, Hansjrg Riehm,
+        and Martin Schrappe. Integrating molecular information into treatment of childhood acute
+        lymphoblastic leukemia—a perspective from the bfm study group. Blood Cells,
+        Molecules, and Diseases, 39(2):160–163, 2007.
+
+  \item Daniel G Tenen. Disruption of diﬀerentiation in human cancer: Aml shows the way. Nature reviews cancer, 3(2):89, 2003.
+
+  \item Julie Wolfson, Can-Lan Sun, Laura Wyatt, Wendy Stock, and Smita Bhatia. Adolescents
+        and young adults with acute lymphoblastic leukemia and acute myeloid leukemia: impact
+        of care at specialized cancer centers on survival outcome. Cancer Epidemiology and
+        Prevention Biomarkers, 26(3):312–320, 2017.
+
+  \item Jennifer F Yamamoto and Marc T Goodman. Patterns of leukemia incidence in the united states
+        by subtype and demographic characteristics, 1997–2002. Cancer Causes \& Control, 19(4):379– 390, 2008.
+
+  \item McLean, T. W., Ringold, S., Neuberg, D., Stegmaier, K., Tantravahi, R., Ritz, J., ... \& Bartram, C. R. (1996).
+        TEL/AML-1 dimerizes and is associated with a favorable outcome in childhood acute lymphoblastic leukemia.
+        Blood, 88(11), 4252-4258.
+
+  \item Golub, T. R., Barker, G. F., Bohlander, S. K., Hiebert, S. W., Ward, D. C., Bray-Ward, P., ... \& Gilliland,
+        D. G. (1995). Fusion of the TEL gene on 12p13 to the AML1 gene on 21q22 in acute lymphoblastic leukemia.
+        Proceedings of the National Academy of Sciences, 92(11), 4917-4921.
+
+  \item Romana, S. P., Poirel, H., Leconiat, M., Flexor, M. A., Mauchauffe, M., Jonveaux, P., ... \& Bernard, O. A. (1995).
+        High frequency of t (12; 21) in childhood B-lineage acute lymphoblastic leukemia. Blood, 86(11), 4263-4269.
+
+  \item Shurtleff, S. A., Buijs, A., Behm, F. G., Rubnitz, J. E., Raimondi, S. C., Hancock, M. L., ... \& Downing, J. R. (1995).
+        TEL/AML1 fusion resulting from a cryptic t (12; 21) is the most common genetic lesion in pediatric ALL and defines
+        a subgroup of patients with an excellent prognosis. Leukemia, 9(12), 1985-1989.
+
+\end{enumerate}
+
+\end{document}
