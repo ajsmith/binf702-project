@@ -19,6 +19,7 @@
 \doublespacing
 
 \author{Alexander Smith}
+\author{Xueying Su}
 \affil{School of Systems Biology, George Mason University}
 
 \begin{document}
@@ -27,36 +28,24 @@
 \maketitle
 
 
-\section{Inline R Test}
-
-<<first example>>= (R)
-x1 <- 1:10
-x2 <- x1
-f <- function (a, b) {
-    return (a * b / 2)
-}
-f(x1, x2)
-@
-
-
 \section{Abstract}
 
 The accuracy of cancer classification is of the utmost importance to
 the diagnosis and effective treatment of any form of cancer, both for
-maximizing the efficacy and for minimizing the toxicity of
-treatment. The Golub 1999 study explored methods of improving the
-accuracy of acute lymphoblastic leukemia (ALL) and acute myeloid
-leukemia (AML) classification and diagnosis using through statistical
-methods applied to microarray gene expression data acquired through
-Affymetrix gene chip technology \cite{golub}. The Golub study was
-groundbreaking in what it achieved, and its methods were a novel
-application of statistical learning techniques which are still applied
-today. The goal of this study is to replicate the methods and
-techniques used in the Golub study using tools and technology in the R
-programming language and Bioconductor ecosystem. In doing so, we will
-validate the techniques used in the original Golub 1999 study as well
-as potentially discover new techniques through the application of
-modern methods.
+maximizing the efficacy and for minimizing the toxicity of treatment.
+The Golub 1999 study explored methods of improving the accuracy of
+acute lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene
+chip technology \cite{golub}. The Golub study was groundbreaking in
+what it achieved, and its methods were a novel application of
+statistical learning techniques which are still applied today. The
+goal of this study is to replicate the methods and techniques used in
+the Golub study using tools and technology in the R programming
+language and Bioconductor ecosystem. In doing so, we will validate the
+techniques used in the original Golub 1999 study as well as
+potentially discover new techniques through the application of modern
+methods.
 
 
 \section{Background and Objectives}
@@ -69,6 +58,18 @@ two main challenges: class discovery and class prediction. Those
 challenges map to unsupervised and supervised learning techniques,
 respectively.
 
+Through replication of the Golub data analysis, we aim to answer
+questions related to leukemia subtype classification through using
+newer tools and techniques, such as statistical analysis and machine
+learning. In doing so, we make no prior assumptions about our results,
+but we do aim to either validate the techniques used in the original
+study or apply other techniques of answering these questions which
+involve machine learning methods. We also aim to elaborate on related
+topics, such as techniques for validating the accuracy of our results
+or insight into identifying optimal feature sets for class prediction
+and discovery of leukemia subtypes. In short, this study aims to
+discover new techniques used in the classification of leukemia
+subtypes or validate existing techniques.
 
 \begin{enumerate}
 
@@ -88,56 +89,69 @@ respectively.
 
 \section{Computational Methods}
 
+<<boo, include=FALSE>>= (R)
+library(multtest)
+data(golub)
+@
+
+
 \begin{itemize}
 
   \item We will use descriptive statistical methods in R to analyze
     the Golub gene expression data.
 
   \item We will use statistical learning and machine learning methods
-    in R to predict classification of leukemia subtypes.
+    in R to classify leukemia subtypes based on gene expression data.
 
   \item We will use statistical learning and machine learning methods
-    in R to perform cluster classification of leukemia subtypes with
-    no prior biological knowledge based on gene expression data.
+    in R to discover leukemia subtypes with no prior biological
+    knowledge based on gene expression data.
 
-  \item We will use validation techniques, such as cross-validation,
-    to verify our results and estimate their accuracy.
+  \item We will use validation techniques to verify our results and
+    estimate their accuracy.
 
 \end{itemize}
 
+First, we need to explore the Golub data and in doing so find the
+biomarkers of most interest. In other words, we need to perform
+feature selection as not all gene expression samples differ enough to
+be of use for this study. This is relatively easy to do by testing the
+difference in means across the two patient groups. For our purposes,
+the top 50 biomarkers should be enough.
 
-\section{Biomarkers and Feature Selection}
+<<Biomarkers>>= (R)
+golub.fac <- factor(golub.cl, levels=0:1, labels=c("ALL", "AML"))
+ALL.mean <- apply(golub[, golub.fac=="ALL"], 1, mean)
+AML.mean <- apply(golub[, golub.fac=="AML"], 1, mean)
+o <- order(abs(ALL.mean - AML.mean), decreasing=TRUE)
+biomarkers50 <- golub[o[1:50], ]
+@
 
-\section{Classification Methods}
+POoop
 
-\section{Clustering Methods}
+<<Show Biomarkers>>= (R)
+golub.gnames[biomarkers50[1:5], 2]
+@
+
 
 \section{Results and Discussion}
 
-\section{Conclusion}
+<<Clustering>>= (R)
+1:10
+@
+
+<<Class Prediction>>=
+1:10
+@
+
+
+\section{Conclusions}
+
 
 \section{Further Study}
 
-\section{Discussion}
-
-Through replication of the Golub data analysis, we aim to answer
-questions related to leukemia subtype classification through using
-newer tools and techniques, such as statistical analysis and machine
-learning. In doing so, we make no prior assumptions about our results,
-but we do aim to either validate the techniques used in the original
-study or apply other techniques of answering these questions which
-involve machine learning methods. We also aim to elaborate on related
-topics, such as techniques for validating the accuracy of our results
-or insight into identifying optimal feature sets for class prediction
-and discovery of leukemia subtypes. In short, this study aims to
-discover new techniques used in the classification of leukemia
-subtypes or validate existing techniques.
-
-
-\section{Special Mention}
-
-The proposal and vision for this project was originally made in
-collaboration Xueying Su
+``A brief description of how the conclusions of your analyses could be
+tested using biochemical or genetic techniques''
 
 
 \section{References}
