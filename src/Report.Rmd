@@ -1,0 +1,183 @@
+---
+title: >-
+    BINF702 Spring 2019 - Golub Revisited: Molecular Classification of Cancer
+    Using Statistical Methods
+author: "Alexander Smith"
+date: "10/24/2019"
+output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: no
+    toc_depth: 1
+header-includes:
+- \usepackage{setspace}
+- \doublespacing
+---
+
+
+Abstract
+========
+
+The accuracy of cancer classification is of the utmost importance to the
+diagnosis and effective treatment of any form of cancer, both for
+maximizing the efficacy and for minimizing the toxicity of treatment.
+The Golub 1999 study explored methods of improving the accuracy of acute
+lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene chip
+technology [@golub]. The Golub study was groundbreaking in what it
+achieved, and its methods were a novel application of statistical
+learning techniques which are still applied today. The goal of this
+study is to replicate the methods and techniques used in the Golub study
+using tools and technology in the R programming language and
+Bioconductor ecosystem. In doing so, we will validate the techniques
+used in the original Golub 1999 study as well as potentially discover
+new techniques through the application of modern methods.
+
+
+Background and Objectives
+=========================
+
+The Golub 1999 study sought to discover statistical learning methods
+which could accurately distinguish and classify molecular subtypes of
+leukemia, specifically acute lymphoblastic leukemia (ALL) and acute
+myeloid leukemia (AML). The study divided cancer classification into two
+main challenges: class discovery and class prediction. Those challenges
+map to unsupervised and supervised learning techniques, respectively.
+
+Through replication of the Golub data analysis, we aim to answer
+questions related to leukemia subtype classification through using newer
+tools and techniques, such as statistical analysis and machine learning.
+In doing so, we make no prior assumptions about our results, but we do
+aim to either validate the techniques used in the original study or
+apply other techniques of answering these questions which involve
+machine learning methods. We also aim to elaborate on related topics,
+such as techniques for validating the accuracy of our results or insight
+into identifying optimal feature sets for class prediction and discovery
+of leukemia subtypes. In short, this study aims to discover new
+techniques used in the classification of leukemia subtypes or validate
+existing techniques.
+
+1.  What are the genes or biomarkers associated with AML and ALL
+    classification? What is an optimal set for the class prediction?
+
+2.  What are the molecular subtypes of AML and ALL that can be
+    accurately predicted? Which subtypes can be accurately identified
+    through class discovery?
+
+3.  What are some of the advantages and disadvantages of different
+    statistical learning techniques used with class predicition and
+    class discovery?
+
+
+Computational Methods
+=====================
+
+In this study, we will pursue the following in order to attempt to
+meet the objectives given above:
+
+-   We will use descriptive statistical methods in R to analyze the
+    Golub gene expression data in order to find appropriate biomarkers
+    and thus define a feature set.
+
+-   We will use statistical learning and machine learning methods in R
+    to classify leukemia subtypes based on gene expression data.
+
+-   We will use statistical learning and machine learning methods in R
+    to discover leukemia subtypes with no prior biological knowledge
+    based on gene expression data.
+
+-   We will use validation techniques to verify our results and estimate
+    their accuracy.
+
+Before anything else, a good understanding of the data is
+needed. Checking the mean and standard deviation will determine if the
+data has already been subjected to any standardizing
+transformations. The application of a normality test, such as
+Shapiro-Wilk, will tell us if the data is normally distributed.
+
+Next, the Golub data needs to be explored such that we find the
+biomarkers of most interest. This step is commonly referred to as
+feature selection, and in this case of primary interest are gene
+expression samples which differ enough between the two groups to be
+useful for classification or discovery. A relatively simple method in
+which to accomplish this is to test the difference in medians across
+the two patient groups. For this study's purposes, the top 50
+biomarkers should be enough.
+
+Before attempting class prediction, the data needs to be split into a
+training set and a test set so that we can later validate our
+results. For this study, a randomly selected sample of 1/3rd of the
+data will be set aside as a test set. The remaining 2/3rds will be the
+training set. The training set is used to train the model, while the
+test set is used to gauge model performance.
+
+This study will employ a number of methods for class prediction,
+including Random Forest, Support Vector Machines, and K Nearest
+Neighbor. Random Forest is the first choice, as it provides both good
+predictive power along with good interpretability of results through
+viewing the resulting tree. In addition, using Random Forest allows us
+to determine the features which had the greatest effect in making our
+predictions.
+
+We will also train a Support Vector Machine to use as a challenger
+model. The use of a challenger model helps to verify our predicitive
+strength. In other words, if the random forest and support vector
+machine models achieve similar results, we can be confident in the
+accuracy of our model.
+
+Additionally, we will attempt class prediction using a K Nearest
+Neighbor model. Essentially, this serves as a second challenger model,
+but now we will have three models on which to gauge our prediction
+performance.
+
+For class discovery, we cluster the Golub data using a number of
+methods, such as hierarchical and K-Means clustering. Hierarchical
+clustering builds a hierarchy between observations based on their
+distance from each other, providing a clear view of the cluster
+hierarchies when plotted as a dendrogram. K-Means evenly distributes a
+data set into a predetermined number of clusters where each data point
+is clustered according to its distance from a centroid.
+
+
+Results Discussion
+==================
+
+An initial attempt at classification using a random forest achieves
+promising results, and we see that the test set was classified
+completely correctly (Figure 2).
+
+The variable importance plot of the top 10 variables gives us an idea
+of some of the important genes which may be related to ALL or
+AML. We'll look at the top 2 later: CST3 Cystatin C and Zyxin.
+
+From the plot of the cluster dendrogram, we see at least 2 major
+groups and perhaps other well formed clusters within them.
+
+Applying K-Means clustering with K=2 will easily find 2 clusters
+which map to ALL and AML groups. However, the previous hierarchical
+clusters indicated that there may be more groups of interest than just
+two. Indeed in the original Golub study, the discovery process found 3
+groups.
+
+Of course, K-Means will find any number of clusters you tell it to,
+though that doesn't mean the clusters are meaningful. In the original
+Golub study, class discovery was paired with class prediction in order
+to validate the results of discovery. To summarize, if classification
+showed high predictive strength after class discovery, then there can
+be more confidence that the discovered classes are correct.
+
+
+Conclusions
+===========
+
+
+Further Study
+=============
+
+A brief description of how the conclusions of your analyses could be
+tested using biochemical or genetic techniques
+
+
+References
+==========
