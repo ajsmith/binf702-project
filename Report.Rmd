@@ -1,0 +1,114 @@
+---
+title: "BINF702 Paper"
+author: "Alexander Smith <asmitl@gmu.edu>"
+date: "10/24/2019"
+output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: no
+    toc_depth: 1
+header-includes:
+- \usepackage{setspace}
+- \doublespacing
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+library(multtest)
+```
+
+
+Abstract
+========
+
+The accuracy of cancer classification is of the utmost importance to the
+diagnosis and effective treatment of any form of cancer, both for
+maximizing the efficacy and for minimizing the toxicity of treatment.
+The Golub 1999 study explored methods of improving the accuracy of acute
+lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene chip
+technology [@golub]. The Golub study was groundbreaking in what it
+achieved, and its methods were a novel application of statistical
+learning techniques which are still applied today. The goal of this
+study is to replicate the methods and techniques used in the Golub study
+using tools and technology in the R programming language and
+Bioconductor ecosystem. In doing so, we will validate the techniques
+used in the original Golub 1999 study as well as potentially discover
+new techniques through the application of modern methods.
+
+Background and Objectives
+=========================
+
+The Golub 1999 study sought to discover statistical learning methods
+which could accurately distinguish and classify molecular subtypes of
+leukemia, specifically acute lymphoblastic leukemia (ALL) and acute
+myeloid leukemia (AML). The study divided cancer classification into two
+main challenges: class discovery and class prediction. Those challenges
+map to unsupervised and supervised learning techniques, respectively.
+
+Through replication of the Golub data analysis, we aim to answer
+questions related to leukemia subtype classification through using newer
+tools and techniques, such as statistical analysis and machine learning.
+In doing so, we make no prior assumptions about our results, but we do
+aim to either validate the techniques used in the original study or
+apply other techniques of answering these questions which involve
+machine learning methods. We also aim to elaborate on related topics,
+such as techniques for validating the accuracy of our results or insight
+into identifying optimal feature sets for class prediction and discovery
+of leukemia subtypes. In short, this study aims to discover new
+techniques used in the classification of leukemia subtypes or validate
+existing techniques.
+
+1.  What are the genes or biomarkers associated with AML and ALL
+    classification? What is the optimal set for the class prediction?
+
+2.  What are the molecular subtypes of AML and ALL that can be
+    accurately predicted? Which subtypes can be accurately identified
+    through class discovery?
+
+3.  What are some of the advantages and disadvantages of different
+    validation techniques used with class predicition and class
+    discovery?
+
+Computational Methods
+=====================
+
+
+-   We will use descriptive statistical methods in R to analyze the
+    Golub gene expression data.
+
+-   We will use statistical learning and machine learning methods in R
+    to classify leukemia subtypes based on gene expression data.
+
+-   We will use statistical learning and machine learning methods in R
+    to discover leukemia subtypes with no prior biological knowledge
+    based on gene expression data.
+
+-   We will use validation techniques to verify our results and estimate
+    their accuracy.
+
+First, we need to explore the Golub data and in doing so find the
+biomarkers of most interest. In other words, we need to perform feature
+selection as not all gene expression samples differ enough to be of use
+for this study. This is relatively easy to do by testing the difference
+in means across the two patient groups. For our purposes, the top 50
+biomarkers should be enough.
+
+
+Results and Discussion
+======================
+
+
+Conclusions
+===========
+
+Further Study
+=============
+
+"A brief description of how the conclusions of your analyses could be
+tested using biochemical or genetic techniques"
+
+References
+==========
+
