@@ -1,0 +1,21 @@
+# Scraps
+
+```{r Most Important Variables, echo=FALSE, fig.cap="Top 5 Important Variables"}
+rf.imp <- importance(rf.fit, type=2)
+## top5 <- order(rf.imp, decreasing=TRUE)[1:5]
+top5 <- rf.imp[1:5]
+top5
+table(golub.gnames[top5, 3])
+## kable(cbind(golub.gnames[top5, 3], rf.imp[top5]))
+## golub.gnames[rf.imp[1:5], 2]
+## kable(rf.imp[sort.list(rf.imp)])
+## kable(golub.gnames[o[1:5], 2])
+## kable(rf.imp)
+## dim(rf.imp)
+```
+
+In the original Golub study, class discovery was paired with class
+prediction in order to validate the results of discovery. To
+summarize, if classification showed high predictive strength after
+class discovery, then there can be more confidence that the discovered
+classes are correct.
