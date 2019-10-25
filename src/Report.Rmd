@@ -12,8 +12,19 @@ output:
 header-includes:
 - \usepackage{setspace}
 - \doublespacing
+documentclass: article
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+set.seed(1)
+library(class)
+library(e1071)
+library(multtest)
+library(knitr)
+library(randomForest)
+data(golub)
+```
 
 Abstract
 ========

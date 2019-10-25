@@ -17,6 +17,11 @@ data(golub)
 ## data(golub)
 ## ```
 
+golub.shapiro <- apply(golub, 2, function(x) { shapiro.test(x)$p.value})
+sum(golub.shapiro > 0.05)
+
+golub.var <- apply(golub, 1, var)
+sum(golub.var != 1)
 
 ## ```{r Biomarkers, echo=FALSE, fig.cap='Biomarkers'}
 golub.fac <- factor(golub.cl, levels=0:1, labels=c("ALL", "AML"))

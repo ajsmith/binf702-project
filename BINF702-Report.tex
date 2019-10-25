@@ -1,0 +1,301 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber, style=apa]{biblatex}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\graphicspath{ {./images/} }
+\bibliography{binf702golub}
+\doublespacing
+
+\title{BINF702 Spring 2019 - Golub Revisited: Molecular Classification
+  of Cancer Using Statistical Methods}
+
+\author{Alexander Smith}
+\date{October 25, 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+
+The accuracy of cancer classification is of the utmost importance to the
+diagnosis and effective treatment of any form of cancer, both for
+maximizing the efficacy and for minimizing the toxicity of treatment.
+The Golub 1999 study explored methods of improving the accuracy of acute
+lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML)
+classification and diagnosis using through statistical methods applied
+to microarray gene expression data acquired through Affymetrix gene chip
+technology \autocite{GOLUB}. The Golub study was groundbreaking in what it
+achieved, and its methods were a novel application of statistical
+learning techniques which are still applied today. The goal of this
+study is to replicate the methods and techniques used in the Golub study
+using tools and technology in the R programming language and
+Bioconductor ecosystem. In doing so, we will validate the techniques
+used in the original Golub 1999 study as well as potentially discover
+new techniques through the application of modern methods.
+
+\section{Background and Objectives}
+
+The Golub 1999 study sought to discover statistical learning methods
+which could accurately distinguish and classify molecular subtypes of
+leukemia, specifically acute lymphoblastic leukemia (ALL) and acute
+myeloid leukemia (AML). The gene expression data for patients was
+sampled using DNA microarray technology. The study divided cancer
+classification into two main challenges: class discovery and class
+prediction. Those challenges map to unsupervised and supervised
+learning techniques, respectively.
+
+Through replication of the Golub data analysis, we aim to answer
+questions related to leukemia subtype classification through using newer
+tools and techniques, such as statistical analysis and machine learning.
+In doing so, we make no prior assumptions about our results, but we do
+aim to either validate the techniques used in the original study or
+apply other techniques of answering these questions which involve
+machine learning methods. We also aim to elaborate on related topics,
+such as techniques for validating the accuracy of our results or insight
+into identifying optimal feature sets for class prediction and discovery
+of leukemia subtypes. In short, this study aims to discover new
+techniques used in the classification of leukemia subtypes or validate
+existing techniques.
+
+The objective of this study is to answer the following:
+
+\begin{enumerate}
+
+  \item What are the genes or biomarkers associated with AML and ALL
+    classification? What is an optimal set for the class prediction?
+
+  \item What are the molecular subtypes of AML and ALL that can be
+    accurately predicted? Which subtypes can be accurately identified
+    through class discovery?
+
+  \item What are some of the advantages and disadvantages of different
+    statistical learning techniques used with class prediction and
+    class discovery?
+
+\end{enumerate}
+
+
+\section{Computational Methods}
+
+In this study, we will pursue the following in order to attempt to
+meet the objectives given above:
+
+\begin{enumerate}
+
+  \item We will use descriptive statistical methods in R to analyze
+    the Golub gene expression data in order to find appropriate
+    biomarkers and thus define a feature set.
+
+  \item We will use statistical learning and machine learning methods
+    in R to classify leukemia subtypes based on gene expression data.
+
+  \item We will use statistical learning and machine learning methods
+    in R to discover leukemia subtypes with no prior biological
+    knowledge based on gene expression data.
+
+  \item We will use validation techniques to verify our results and
+    estimate their accuracy.
+
+\end{enumerate}
+
+Before anything else, a good understanding of the data is
+needed. Checking the mean and standard deviation will determine if the
+data has already been subjected to any standardizing
+transformations. The application of a normality test, such as
+Shapiro-Wilk, will tell us if the data is normally distributed.
+
+Next, the Golub data needs to be explored such that we find the
+biomarkers of most interest. This step is commonly referred to as
+feature selection, and in this case of primary interest are gene
+expression samples which differ enough between the two groups to be
+useful for classification or discovery. A relatively simple method in
+which to accomplish this is to test the difference in medians across
+the two patient groups. For this study's purposes, the top 50
+biomarkers should be enough.
+
+Before attempting class prediction, the data needs to be split into a
+training set and a test set so that we can later validate our
+results. For this study, a randomly selected sample of 1/3rd of the
+data will be set aside as a test set. The remaining 2/3rds will be the
+training set. The training set is used to train the model, while the
+test set is used to gauge model performance.
+
+This study will employ a number of methods for class prediction,
+including Random Forest, Support Vector Machines, and K Nearest
+Neighbor. Random Forest is the first choice, as it provides both good
+predictive power along with good interpretability of results through
+viewing the resulting tree \autocite{liaw2002classification,
+  diaz2006gene}.  In addition, using Random Forest allows us to
+determine the features which had the greatest effect in making our
+predictions.
+
+We will also train a Support Vector Machine to use as a challenger
+model \autocite{scholkopf2001learning}. The use of a challenger model
+helps to verify our predicitive strength. In other words, if the
+random forest and support vector machine models achieve similar
+results, we can be confident in the accuracy of our model.
+
+Additionally, we will attempt class prediction using a K Nearest
+Neighbor model. Essentially, this serves as a second challenger model,
+but now we will have three models on which to gauge our prediction
+performance.
+
+For class discovery, we cluster the Golub data using a number of
+methods, such as hierarchical and K-Means clustering. Hierarchical
+clustering builds a hierarchy between observations based on their
+distance from each other, providing a clear view of the cluster
+hierarchies when plotted as a dendrogram. K-Means evenly distributes a
+data set into a predetermined number of clusters where each data point
+is clustered according to its distance from a centroid.
+
+
+\section{Results Discussion}
+
+Using R's built-in functions for mean and standard deviation, it's
+clear the patient data has already been scaled and centered. This is
+also quite clear when looking at a boxplot of the patient data
+(Figure \ref{fig:patient-boxplot}).
+
+\begin{figure}
+  \includegraphics{patients-boxplot.png}
+  \caption{Scaled Patient Data}
+  \label{fig:patient-boxplot}
+\end{figure}
+
+Finding the biomarkers is mostly a simple comparison of the median
+across the gene expression data. The median is chosen as it's robust
+against outliers (Figure \ref{fig:biomarkers-boxplot}).
+
+\begin{figure}
+  \includegraphics{biomarkers-boxplot.png}
+  \caption{Biomarkers Boxplot}
+  \label{fig:biomarkers-boxplot}
+\end{figure}
+
+Classification using a random forest achieves promising results, and
+we see that the test set was classified correctly with no errors
+(Table \ref{table:1}).
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      & ALL & AML \\
+      \hline
+      ALL' & 7 & 0 \\
+      \hline
+      AML' & 0 & 6 \\
+      \hline
+    \end{tabular}
+    \caption{Random Forest Confusion Matrix}
+    \label{table:1}
+  \end{center}
+\end{table}
+
+The Support Vector Machine and K Nearest Neighbor (K=5) challenger
+models both produce slightly less accurate results when trained and
+tested on the same data.  Their accuracy is still good overall, but
+not as good as the Random Forest, so our challenger models provide
+some evidence that Random Forest model is the highest performing model
+for this data set.  It's also worth noting that the K Nearest Neighbor
+model will produce different results for different values of K, so it
+requires some tuning. (Table \ref{table:2})
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      & ALL & AML \\
+      \hline
+      ALL' & 7 & 1 \\
+      \hline
+      AML' & 0 & 5 \\
+      \hline
+    \end{tabular}
+    \caption{Confusion Matrix for SVM and KNN (K=5)}
+    \label{table:2}
+  \end{center}
+\end{table}
+
+Another feature of the Random Forest is its interpretability as it
+allows us to view important variables. The variable importance plot of
+the top 5 variables gives us an idea of some of the important genes
+which may be related to ALL or AML (Figure
+\ref{fig:variable-importance}). The top 2 genes shown are CST3
+Cystatin C and Zyxin.
+
+\begin{figure}
+  \includegraphics{variable-importance.png}
+  \caption{Variable Importance by MeanDecreaseGini}
+  \label{fig:variable-importance}
+\end{figure}
+
+Zyxin is a LIM domain protein which plays a role in apoptosis, the
+pathway for programmed cell death. Misregulated Zyxin expression is
+related to loss of apoptotic control, thus leading to oncogenesis
+\autocite{doi:10.1177/1947601910376192, Macalma06121996}.
+
+Performing hierarchical clustering gives some insight into how the
+data points are related to each other. From the plot of the cluster
+dendrogram, we see at least 2 major groups and perhaps other well
+formed clusters within them. (Figure \ref{fig:cluster-dendrogram})
+
+\begin{figure}
+  \includegraphics{cluster-dendrogram.png}
+  \caption{Cluster Dendrogram}
+  \label{fig:cluster-dendrogram}
+\end{figure}
+
+Applying K-Means clustering with K=2 handily finds 2 clusters, but it
+shows some errors when mapped back to the true ALL and AML
+groups. However, the previous hierarchical clusters indicated that
+there may be more groups of interest than just two. Indeed in the
+original Golub study, the discovery process found 3 groups. When
+K-Means is run with K=3, it becomes clear that the AML group is
+reliably found and the ALL group is split into two additional
+clusters. This seems to match some of the deeper ALL clustering seen
+in the hierarchical cluster (Figure \ref{fig:cluster-dendrogram}).
+
+Of course, K-Means will find any number of clusters you tell it to,
+though that doesn't mean the clusters are meaningful. In the original
+Golub study, class discovery was paired with class prediction in order
+to validate the results of discovery. To summarize, if classification
+showed high predictive strength after class discovery, then there can
+be more confidence that the discovered classes are correct.
+
+
+\section{Conclusions}
+
+By applying statistical learning methods, we were able to achieve both
+class discovery and prediction in a similar fashion to the original
+Golub 1999 study. Applying unsupervised learning techniques allows us
+to determine patient groups without needing to provide any prior
+biological knowledge to the system, though such techniques need to be
+paired with validation techniques to ensure discovery is
+meaningful. Classification methods can be extremely effective provided
+we have an idea of what classes to predict. By applying these methods
+appropriately, we're able to find patterns in data and make
+determinations which may not have been apparent otherwise.
+
+
+\section{Further Study and Testing}
+
+One obvious way this study could be taken further is to collect more
+gene expression data, either for more patients for other types of
+cancer. It would be interesting to see how gene expression differs for
+different types of cancer.
+
+A possible biochemical method of further testing may be to modify a
+model organism to carry mutated versions of Zyxin, CST3, or other
+genes found to be important, and test whether there is any effect in
+cell lifecycle regulation, specifically with regards to cancers.
+
+\section{References}
+
+\printbibliography
+
+
+\end{document}
